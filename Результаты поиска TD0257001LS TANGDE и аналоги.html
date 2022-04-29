@@ -1132,89 +1132,7 @@
                                                                     src="./Результаты поиска TD0257001LS TANGDE и аналоги_files/info-store.png">
                                                             </div>
                                                             <div class="js-store-tooltip-content" style="display: none">
-                                                                <div class="store-data">
-                                                                    <div class="store-data__close js-tooltip-close">×
-                                                                    </div>
-                                                                    <div class="store-data__available">
-                                                                        <div class="store-data__header">Статистика
-                                                                            поставки детали</div>
-                                                                        <div class="store-data__row">
-                                                                            <div class="store-data__col">Наличие на:
-                                                                            </div>
-                                                                            <div class="store-data__col">ЦС Москва</div>
-                                                                        </div>
-                                                                        <div class="store-data__row">
-                                                                            <div class="store-data__col">Вероятность
-                                                                                поставки:</div>
-                                                                            <div class="store-data__col">100%</div>
-                                                                        </div>
-                                                                        <div class="store-data__row">
-                                                                            <div class="store-data__col">Актуальность
-                                                                                цен и остатков:</div>
-                                                                            <div class="store-data__col">27.04.2022
-                                                                                12:15:00</div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="store-data__delivery">
-                                                                        <div class="store-data__header">Сроки доставки в
-                                                                            наши магазины</div>
-                                                                        <div class="store-data__row">
-                                                                            <div class="store-data__col">МКАД 32км</div>
-                                                                            <div class="store-data__col">3 раза в день,
-                                                                                через 3-4 ч после заказа. Суббота 1
-                                                                                доставка вечером.</div>
-                                                                        </div>
-                                                                        <div class="store-data__row">
-                                                                            <div class="store-data__col">МКАД 31км</div>
-                                                                            <div class="store-data__col">3 раза в день,
-                                                                                через 3-4 ч после заказа. Суббота 1
-                                                                                доставка вечером.</div>
-                                                                        </div>
-                                                                        <div class="store-data__row">
-                                                                            <div class="store-data__col">Балашиха ТЦ М7
-                                                                            </div>
-                                                                            <div class="store-data__col">на след. день,
-                                                                                при заказе до 19ч.</div>
-                                                                        </div>
-                                                                        <div class="store-data__row">
-                                                                            <div class="store-data__col">Грибки</div>
-                                                                            <div class="store-data__col">день в день при
-                                                                                заказе до 12 ч, утром при заказе до 19
-                                                                                ч. Суббота по согласованию с
-                                                                                менеджером.</div>
-                                                                        </div>
-                                                                        <div class="store-data__row">
-                                                                            <div class="store-data__col">ТК Львовский
-                                                                            </div>
-                                                                            <div class="store-data__col">день в день при
-                                                                                заказе до 12 ч, утром при заказе до 19
-                                                                                ч. Суббота по согласованию с
-                                                                                менеджером.</div>
-                                                                        </div>
-                                                                        <div class="store-data__row">
-                                                                            <div class="store-data__col">
-                                                                                Санкт-Петербург, Шушары</div>
-                                                                            <div class="store-data__col">на след. день,
-                                                                                при заказе до 19ч.</div>
-                                                                        </div>
-                                                                        <div class="store-data__row">
-                                                                            <div class="store-data__col">Ростов-на-Дону
-                                                                            </div>
-                                                                            <div class="store-data__col">на след. день,
-                                                                                при заказе до 19ч.</div>
-                                                                        </div>
-                                                                        <div class="store-data__row">
-                                                                            <div class="store-data__col">Аксай</div>
-                                                                            <div class="store-data__col">на след. день,
-                                                                                при заказе до 19ч.</div>
-                                                                        </div>
-                                                                        <div class="store-data__row">
-                                                                            <div class="store-data__col">Краснодар</div>
-                                                                            <div class="store-data__col">через 1 день,
-                                                                                при заказе до 19ч.</div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                                {"availableData":[["leftcol","rightcol"],["leftcol","rightcol"],["leftcol","rightcol"]],"deliveryData":[["leftcol","rightcol"],["leftcol","rightcol"],["leftcol","rightcol"]]}
                                                             </div>
                                                             <span class="offer__store_desc">ТК Львовский</span>
                                                         </div>
@@ -5722,13 +5640,47 @@
             display: flex;
             flex: 0 0 150px;
         }
-        
+
         .store-data__row>.store-data__col:last-child {
             text-align: right;
         }
 
     </style>
     <script>
+
+        const getTooltipTemplate = (data) => (`
+            <div class="store-data">
+                <div class="store-data__close js-tooltip-close">×</div>
+                <div class="store-data__available">
+                <div class="store-data__header">Статистика поставки детали</div>
+                ${(function iterate() {
+                    let templateBlock = '';
+                    data.availableData.forEach(item => {
+                    templateBlock += `
+                        <div class="store-data__row">
+                            <div class="store-data__col">${item[0]}</div>
+                            <div class="store-data__col">${item[1]}</div>
+                        </div>`
+                    });
+                    return templateBlock;
+                })()}
+                </div>
+                <div class="store-data__delivery">
+                <div class="store-data__header">Сроки доставки в наши магазины</div>
+                ${(function iterate() {
+                    let templateBlock = '';
+                    data.deliveryData.forEach(item => {
+                    templateBlock += `
+                        <div class="store-data__row">
+                        <div class="store-data__col">${item[0]}</div>
+                        <div class="store-data__col">${item[1]}</div>
+                        </div>`
+                    });
+                    return templateBlock;
+                })()}
+                </div>
+            </div>
+        `);
 
         $(document).ready(function () {
             $('.js-store-tooltip').tooltipster({
@@ -5738,7 +5690,7 @@
                 maxWidth: 800,
                 interactive: true,
                 functionReady: function (origin, tooltip) {
-                    $(tooltip.origin).tooltipster('content', $(tooltip.origin).find('.js-store-tooltip-content').html());
+                    $(tooltip.origin).tooltipster('content', getTooltipTemplate(JSON.parse($(tooltip.origin).find('.js-store-tooltip-content').html())));
                     $('.js-tooltip-close').on('click', function () {
                         const instances = $.tooltipster.instances();
                         $.each(instances, function (i, instance) {
