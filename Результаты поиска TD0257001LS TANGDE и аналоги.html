@@ -1132,7 +1132,7 @@
                                                                     src="./Результаты поиска TD0257001LS TANGDE и аналоги_files/info-store.png">
                                                             </div>
                                                             <div class="js-store-tooltip-content" style="display: none">
-                                                                {"availableData":[["leftcol","rightcol"],["leftcol","rightcol"],["leftcol","rightcol"]],"deliveryData":[["leftcol","rightcol"],["leftcol","rightcol"],["leftcol","rightcol"]]}
+                                                                {"probability": "70", "availableData":[["leftcol","rightcol"],["leftcol","rightcol"],["leftcol","rightcol"]],"deliveryData":[["leftcol","rightcol"],["leftcol","rightcol"],["leftcol","rightcol"]]}
                                                             </div>
                                                             <span class="offer__store_desc">ТК Львовский</span>
                                                         </div>
@@ -5579,6 +5579,8 @@
     <!-- js-menu-catalog.js-->
     <script src="./Результаты поиска TD0257001LS TANGDE и аналоги_files/js-menu-catalog.js" defer="defer"></script>
 
+    <script src="./chart.min.js" defer="defer"></script>
+
     <!-- tooltipsterbundlemin.js-->
     <script src="./Результаты поиска TD0257001LS TANGDE и аналоги_files/tooltipster.bundle.min.js"
         defer="defer"></script>
@@ -5627,6 +5629,10 @@
             margin-bottom: 10px;
         }
 
+        .store-data__row + .store-data__header  {
+            margin-top: 15px;
+        }
+
         .store-data__row {
             display: flex;
             justify-content: space-between;
@@ -5643,6 +5649,11 @@
 
         .store-data__row>.store-data__col:last-child {
             text-align: right;
+        }
+
+        .store-data__chart {
+            width: 220px;
+            margin: 0px auto 20px;
         }
 
     </style>
@@ -5664,6 +5675,10 @@
                     });
                     return templateBlock;
                 })()}
+                  <div class="store-data__header">Вероятность поставки</div>
+                  <div class="store-data__chart">
+                    <canvas class="js-chart" width="200" height="200"></canvas>
+                  </div>
                 </div>
                 <div class="store-data__delivery">
                 <div class="store-data__header">Сроки доставки в наши магазины</div>
@@ -5690,13 +5705,50 @@
                 maxWidth: 800,
                 interactive: true,
                 functionReady: function (origin, tooltip) {
-                    $(tooltip.origin).tooltipster('content', getTooltipTemplate(JSON.parse($(tooltip.origin).find('.js-store-tooltip-content').html())));
+                    const tooltipData = JSON.parse($(tooltip.origin).find('.js-store-tooltip-content').html());
+                    $(tooltip.origin).tooltipster('content', getTooltipTemplate(tooltipData));
                     $('.js-tooltip-close').on('click', function () {
                         const instances = $.tooltipster.instances();
                         $.each(instances, function (i, instance) {
                             instance.close();
                         });
                     });
+                    const probability = tooltipData.probability;
+                    const data = {
+                        labels: [
+
+                            `Вероятность поставки ${probability}%`,
+                            `Вероятность отказа ${100-probability}%`,
+                        ],
+                        datasets: [{
+                            data: [probability, 100-probability],
+                            backgroundColor: [
+                                'rgb(72, 229, 100)',
+                                'rgb(229, 72, 72)',
+                            ],
+                        }],
+                    };
+                    const config = {
+                        type: 'pie',
+                        data: data,
+                        tooltips: {enabled: false},
+                        hover: {mode: null},
+                        options: {
+                            events: [],
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    align: 'start',
+                                    title: {position: 'start'},
+                                    labels: {color: '#ffffff'},
+                                }
+                            }
+                        }
+                    };
+                    const chart = new Chart(
+                        tooltip.tooltip.querySelector('.js-chart'),
+                        config
+                    );
                 }
             });
 
