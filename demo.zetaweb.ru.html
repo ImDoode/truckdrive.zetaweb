@@ -32,12 +32,21 @@
     <!-- style-v.css -->
     <link rel="stylesheet" href="./demo.zetaweb.ru_files/style-v.css">
 
+    <link rel="stylesheet" type="text/css" href="./magnific-popup.css"/>
+
     <!-- defaut-theme.css -->
     <!--<link rel="stylesheet" href="/f/default-theme.css?=v1" >-->
     <!-- /css -->
 
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="./demo.zetaweb.ru_files/swiper-bundle.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+        />
+
 </head>
 
 <body id="body" style="height: 100%;">
@@ -1130,7 +1139,70 @@
                                 <span>Авторазбор БД</span>
                             </div>
                         </div><!-- !!breadcrumbs -->
-                        <div id="zw_informationblocks" cp_controltype="zw_informationblocks.ascx"
+                        <div class="trucks-filter__container">
+                            <div class="trucks-filter">
+                                <div class="trucks-filter__header">
+                                    Выберите марку
+                                </div>
+                                <div class="trucks-filter__list">
+                                    <a href="#" class="trucks-filter__item">Iveco</a>
+                                    <a href="#" class="trucks-filter__item">Mercedes</a>
+                                    <a href="#" class="trucks-filter__item">Scania</a>
+                                    <a href="#" class="trucks-filter__item">Iveco</a>
+                                    <a href="#" class="trucks-filter__item">Mercedes</a>
+                                    <a href="#" class="trucks-filter__item">Scania</a>
+                                    <a href="#" class="trucks-filter__item">Iveco</a>
+                                </div>
+                            </div>
+                        </div>
+                        <style>
+                            .trucks-filter__container {
+                                background: #DA6D41;
+                                padding: 30px 20px;
+                                margin: 20px 0;
+                            }
+                            .trucks-filter {
+                                border: 2px solid #fff;
+                                border-left: none;
+                                border-right: none;
+                                color: #fff;
+                            }
+                            .trucks-filter__header {
+                                font-size: 28px;
+                                font-weight: bold;
+                                margin: 20px 0;
+                            }
+                            .trucks-filter__list {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 20px;
+                                justify-content: space-between;
+                                margin: 20px 0;
+                            }
+                            @media screen and (max-width: 500px) {
+                                .trucks-filter__item {
+                                    width: 100%;
+                                }
+                            }
+                            .trucks-filter__item {
+                                border: none;
+                                cursor: pointer;
+                                background: #fff;
+                                color: #000;
+                                padding: 10px 25px;
+                                border-radius: 10px;
+                                transition-duration: .3s;
+                                text-decoration: none;
+                                text-transform: uppercase;
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+                            .trucks-filter__item:hover {
+                                background: #C93B36;
+                                color: #fff;
+                            }
+                        </style>
+                        <div id="zw_informationblocks" cp_controltype="zw_informationblocks.ascx" class="trucks__list"
                             cp_uniquekey="informationblocks" data-cp-isasync="True"
                             cp_previewtemplateid="2a50930e-de50-11ec-96f6-84c5a6d43fab"
                             cp_detailtemplateid="85ffea19-94e8-11e1-ae2d-0025902d5f48"
@@ -1141,112 +1213,193 @@
                             cp_disableserverrendering="false" cp_columnscount="1" cp_isdrawvertical="false"
                             cp_issaveuservalues="false" cp_ignoreinstanceid="false" cp_pagesize="0"
                             cp_isprimary="false">
-                            <div class="news-item">
-                                <div class="news-hdr">
-                                    <h4>SCANIA R420 2</h4>
-                                </div><img src="./demo.zetaweb.ru_files/scania-r420.jpg" alt="Scania R420"
-                                    title="Scania R420">
-                                <div class="news-content">
-                                    <div class="news-date"></div>
-                                    <div class="news-text">
-                                        <div class="model-parse__description">
-                                            <div class="model-parse__name">
-                                                <p>SCANIA R420 (2 машина)</p>
-                                            </div>
-                                            <div class="model-parse__date">
-                                                <p>Дата поступления : 20.01.2022</p>
-                                            </div>
-                                            <ul class="model-parse__props-list">
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Производитель: </span> <span
-                                                        class="model-props__desc">SCANIA</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Модель: </span> <span
-                                                        class="model-props__desc">R420</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Год выпуска: </span> <span
-                                                        class="model-props__desc">2005</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Двигатель: </span> <span
-                                                        class="model-props__desc">DC12 14 L01 420 Euro-3</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Колесная формула: </span> <span
-                                                        class="model-props__desc">4x2</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Тип грузовика: </span> <span
-                                                        class="model-props__desc">Седельный тягач</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">КПП: </span> <span
-                                                        class="model-props__desc">МКПП GRS900</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Редуктор: </span> <span
-                                                        class="model-props__desc">R780</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Передаточное число: </span> <span
-                                                        class="model-props__desc">2.71</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Тип кабины: </span> <span
-                                                        class="model-props__desc">CR</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">VIN: </span> <span
-                                                        class="model-props__desc">XLER4X20005130904</span></li>
-                                            </ul>
+                            <div class="trucks__item">
+                                <div class="trucks__col">
+                                    <div class="trucks__gallery">
+                                        <a href="./demo.zetaweb.ru_files/scania-r420.jpg" data-fancybox="gallery2" class="trucks__gallery-main" title="Scania R420"><img src="https://via.placeholder.com/350x450" alt="Scania R420" title="Scania R420"></a>
+                                        <div class="trucks__gallery-preview">
+                                            <a href="https://via.placeholder.com/350x450" data-fancybox="gallery2" class="trucks__gallery-item" title="Scania 123"><img src="https://via.placeholder.com/350x450" alt="Scania R420" title="Scania R420"></a>
+                                            <a data-fancybox="gallery1" href="https://youtu.be/FZALKMn8W9o" class="trucks__gallery-item">
+                                                <img src="http://i3.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" />
+                                            </a>
+                                            <a href="https://via.placeholder.com/150x450" data-fancybox="gallery2" class="trucks__gallery-item" title="Scania 456"><img src="https://via.placeholder.com/150x450" alt="Scania R420" title="Scania R420"></a>
+                                            <a href="https://via.placeholder.com/350x150" data-fancybox="gallery2" class="trucks__gallery-item" title="Scania 789"><img src="https://via.placeholder.com/350x150" alt="Scania R420" title="Scania R420"></a>
                                         </div>
+                                    </div>
+                                    <div class="trucks__buttons">
+                                        <button class="trucks__button" onClick="openModal()">Задать вопрос</button>
+                                        <a class="trucks__button" href="/trucks/1">Перейти в каталог</a>
+                                        <a class="trucks__button trucks__button--phone" href="tel:88005553535">8 800 555 35 35</a>
                                     </div>
                                 </div>
+                                <div class="trucks__col trucks__col--content">
+                                    <div class="trucks__name">
+                                        SCANIA R420 (2 машина)
+                                    </div>
+                                    <div class="trucks__date">
+                                        Дата поступления : 20.01.2022
+                                    </div>
+                                    <ul class="trucks__props-list">
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Производитель: </span> <span
+                                                class="trucks-props__desc">SCANIA</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Модель: </span> <span
+                                                class="trucks-props__desc">R420</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Год выпуска: </span> <span
+                                                class="trucks-props__desc">2005</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Двигатель: </span> <span
+                                                class="trucks-props__desc">DC12 14 L01 420 Euro-3</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Колесная формула: </span> <span
+                                                class="trucks-props__desc">4x2</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Тип грузовика: </span> <span
+                                                class="trucks-props__desc">Седельный тягач</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">КПП: </span> <span
+                                                class="trucks-props__desc">МКПП GRS900</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Редуктор: </span> <span
+                                                class="trucks-props__desc">R780</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Передаточное число: </span> <span
+                                                class="trucks-props__desc">2.71</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Тип кабины: </span> <span
+                                                class="trucks-props__desc">CR</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">VIN: </span> <span
+                                                class="trucks-props__desc">XLER4X20005130904</span></li>
+                                        <li class="trucks__props-item trucks-props"><a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">Видео</a></li>
+                                    </ul>
+
+                                </div>
                             </div>
-                            <div class="news-item">
-                                <div class="news-hdr">
-                                    <h4>SCANIA R420</h4>
-                                </div><img src="./demo.zetaweb.ru_files/scania-r420.jpg" alt="Scania R420"
-                                    title="Scania R420">
-                                <div class="news-content">
-                                    <div class="news-date"></div>
-                                    <div class="news-text">
-                                        <div class="model-parse__description">
-                                            <div class="model-parse__name">
-                                                <p>SCANIA R420</p>
-                                            </div>
-                                            <div class="model-parse__date">
-                                                <p>Дата поступления : 20.01.2022</p>
-                                            </div>
-                                            <ul class="model-parse__props-list">
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Производитель: </span> <span
-                                                        class="model-props__desc">SCANIA</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Модель: </span> <span
-                                                        class="model-props__desc">R420</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Год выпуска: </span> <span
-                                                        class="model-props__desc">2005</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Двигатель: </span> <span
-                                                        class="model-props__desc">DC12 14 L01 420 Euro-3</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Колесная формула: </span> <span
-                                                        class="model-props__desc">4x2</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Тип грузовика: </span> <span
-                                                        class="model-props__desc">Седельный тягач</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">КПП: </span> <span
-                                                        class="model-props__desc">МКПП GRS900</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Редуктор: </span> <span
-                                                        class="model-props__desc">R780</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Передаточное число: </span> <span
-                                                        class="model-props__desc">2.71</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">Тип кабины: </span> <span
-                                                        class="model-props__desc">CR</span></li>
-                                                <li class="model-parse__props-item model-props"><span
-                                                        class="model-props__title">VIN: </span> <span
-                                                        class="model-props__desc">XLER4X20005130904</span></li>
-                                            </ul>
+                            <div class="trucks__item">
+                                <div class="trucks__col">
+                                    <div class="trucks__gallery">
+                                        <a href="./demo.zetaweb.ru_files/scania-r420.jpg" data-fancybox="gallery2" class="trucks__gallery-main" title="Scania R420"><img src="./demo.zetaweb.ru_files/scania-r420.jpg" alt="Scania R420" title="Scania R420"></a>
+                                        <div class="trucks__gallery-preview">
+                                            <a href="https://via.placeholder.com/350x450" data-fancybox="gallery2" class="trucks__gallery-item" title="Scania 123"><img src="https://via.placeholder.com/350x450" alt="Scania R420" title="Scania R420"></a>
+                                            <a href="https://via.placeholder.com/150x450" data-fancybox="gallery2" class="trucks__gallery-item" title="Scania 456"><img src="https://via.placeholder.com/150x450" alt="Scania R420" title="Scania R420"></a>
+                                            <a href="https://via.placeholder.com/350x150" data-fancybox="gallery2" class="trucks__gallery-item" title="Scania 789"><img src="https://via.placeholder.com/350x150" alt="Scania R420" title="Scania R420"></a>
                                         </div>
                                     </div>
+                                    <div class="trucks__buttons">
+                                        <button class="trucks__button" onClick="openModal()">Задать вопрос</button>
+                                        <a class="trucks__button" href="/trucks/2">Перейти в каталог</a>
+                                        <a class="trucks__button trucks__button--phone" href="tel:88005553535">8 800 555 35 35</a>
+                                    </div>
+                                </div>
+                                <div class="trucks__col trucks__col--content">
+                                    <div class="trucks__name">
+                                        SCANIA R420 (2 машина)
+                                    </div>
+                                    <div class="trucks__date">
+                                        Дата поступления : 20.01.2022
+                                    </div>
+                                    <ul class="trucks__props-list">
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Производитель: </span> <span
+                                                class="trucks-props__desc">SCANIA</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Модель: </span> <span
+                                                class="trucks-props__desc">R420</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Год выпуска: </span> <span
+                                                class="trucks-props__desc">2005</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Двигатель: </span> <span
+                                                class="trucks-props__desc">DC12 14 L01 420 Euro-3</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Колесная формула: </span> <span
+                                                class="trucks-props__desc">4x2</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Тип грузовика: </span> <span
+                                                class="trucks-props__desc">Седельный тягач</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">КПП: </span> <span
+                                                class="trucks-props__desc">МКПП GRS900</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Редуктор: </span> <span
+                                                class="trucks-props__desc">R780</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Передаточное число: </span> <span
+                                                class="trucks-props__desc">2.71</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Тип кабины: </span> <span
+                                                class="trucks-props__desc">CR</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">VIN: </span> <span
+                                                class="trucks-props__desc">XLER4X20005130904</span></li>
+                                        <li class="trucks__props-item trucks-props"><a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">Видео</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="trucks__item">
+                                <div class="trucks__col">
+                                    <div class="trucks__gallery">
+                                        <a href="./demo.zetaweb.ru_files/scania-r420.jpg" data-fancybox="gallery2" class="trucks__gallery-main" title="Scania R420"><img src="https://via.placeholder.com/650x450" alt="Scania R420" title="Scania R420"></a>
+                                        <div class="trucks__gallery-preview">
+                                            <a href="https://via.placeholder.com/350x450" data-fancybox="gallery2" class="trucks__gallery-item" title="Scania 123"><img src="https://via.placeholder.com/350x450" alt="Scania R420" title="Scania R420"></a>
+                                            <a href="https://via.placeholder.com/150x450" data-fancybox="gallery2" class="trucks__gallery-item" title="Scania 456"><img src="https://via.placeholder.com/150x450" alt="Scania R420" title="Scania R420"></a>
+                                            <a href="https://via.placeholder.com/350x150" data-fancybox="gallery2" class="trucks__gallery-item" title="Scania 789"><img src="https://via.placeholder.com/350x150" alt="Scania R420" title="Scania R420"></a>
+                                        </div>
+                                    </div>
+                                    <div class="trucks__buttons">
+                                        <button class="trucks__button" onClick="openModal()">Задать вопрос</button>
+                                        <a class="trucks__button" href="/trucks/3">Перейти в каталог</a>
+                                        <a class="trucks__button trucks__button--phone" href="tel:88005553535">8 800 555 35 35</a>
+                                    </div>
+                                </div>
+                                <div class="trucks__col trucks__col--content">
+                                    <div class="trucks__name">
+                                        SCANIA R420 (2 машина)
+                                    </div>
+                                    <div class="trucks__date">
+                                        Дата поступления : 20.01.2022
+                                    </div>
+                                    <ul class="trucks__props-list">
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Производитель: </span> <span
+                                                class="trucks-props__desc">SCANIA</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Модель: </span> <span
+                                                class="trucks-props__desc">R420</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Год выпуска: </span> <span
+                                                class="trucks-props__desc">2005</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Двигатель: </span> <span
+                                                class="trucks-props__desc">DC12 14 L01 420 Euro-3</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Колесная формула: </span> <span
+                                                class="trucks-props__desc">4x2</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Тип грузовика: </span> <span
+                                                class="trucks-props__desc">Седельный тягач</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">КПП: </span> <span
+                                                class="trucks-props__desc">МКПП GRS900</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Редуктор: </span> <span
+                                                class="trucks-props__desc">R780</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Передаточное число: </span> <span
+                                                class="trucks-props__desc">2.71</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">Тип кабины: </span> <span
+                                                class="trucks-props__desc">CR</span></li>
+                                        <li class="trucks__props-item trucks-props"><span
+                                                class="trucks-props__title">VIN: </span> <span
+                                                class="trucks-props__desc">XLER4X20005130904</span></li>
+                                        <li class="trucks__props-item trucks-props"><a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">Видео</a></li>
+                                    </ul>
+
                                 </div>
                             </div>
                         </div><!-- !!autorazbor-bd -->
@@ -1704,6 +1857,135 @@
     <script src="./demo.zetaweb.ru_files/demo.js"></script>
     <script src="./demo.zetaweb.ru_files/zw_Delayed.js"></script>
     <script src="./demo.zetaweb.ru_files/index.js"></script>
+
+    <style>
+        #ccphleft {
+            display: none;
+        }
+        #ccphworkarea {
+            width: 100%;
+        }
+        .trucks__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media screen and (max-width: 990px) {
+            .trucks__list {
+                grid-template-columns: 1fr;
+            }
+        }
+        .trucks__item {
+            border: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        @media screen and (max-width: 500px) {
+            .trucks__item {
+                flex-direction: column;
+            }
+            .trucks__item .trucks__col {
+                width: 100%;
+            }
+        }
+        .trucks__col {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .trucks__gallery {
+            max-height: 310px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .trucks__gallery img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0 auto;
+        }
+        .trucks__gallery .trucks__gallery-main {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            overflow: hidden;
+        }
+        .trucks__gallery .trucks__gallery-preview {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+            height: 70px;
+        }
+        .trucks__gallery .trucks__gallery-preview:empty {
+            display: none;
+        }
+
+        .trucks__buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: auto;
+        }
+        .trucks__button {
+            display: block;
+            background: #e57e17;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+            width: 100%;
+            text-align: center;
+            line-height: 44px;
+            height: 44px;
+            transition-duration: .3s;
+        }
+        .trucks__button--phone::before {
+            content: '';
+            display: inline-block;
+            width: 9px;
+            height: 12px;
+            background: url(./Phone_white.svg) center no-repeat;
+            margin-right: 10px;
+        }
+        .trucks__button:hover {
+            background: #f0953a;
+            color: #fff;
+        }
+        .trucks__button:active {
+            color: #fff;
+        }
+        .trucks__item .trucks__col--content {
+            background-color: #f2f3f3;
+            padding: 12px 24px;
+            margin: 0;
+            height: 100%;
+            color: #555;
+        }
+        .trucks__name {
+            font-size: 15px;
+            margin-bottom: 3px;
+        }
+        .trucks__date {
+            font-size: 12px;
+            line-height: 16px;
+            margin-bottom: 10px;
+        }
+        .trucks__props-list {
+            font-size: 11px;
+            line-height: 18px;
+            list-style: none;
+            padding: 0;
+        }
+        .trucks-props__title {
+            font-weight: 700;
+        }
+    </style>
+    
 </body>
 
 </html>
